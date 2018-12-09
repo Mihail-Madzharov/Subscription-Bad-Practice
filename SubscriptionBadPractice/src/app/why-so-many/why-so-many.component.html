@@ -1,3 +1,14 @@
 <p>
-  why-so-many works!
+  <button (click)="emitSource()">Source observable</button>
+  <button (click)="emitSecondObs()">Second observable</button>
 </p>
+<h1>
+  <p>
+    Source observable counter:{{sourceObsCounter}}
+  </p>
+</h1>
+<h1>
+  <p>
+    Second observable counter:{{secondObsCounter}}
+  </p>
+</h1>
