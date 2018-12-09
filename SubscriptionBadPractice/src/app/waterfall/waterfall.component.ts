@@ -11,15 +11,15 @@ export class WaterfallComponent {
   public sourceObsCounter = 0;
   public secondObsCounter = 0;
 
-  public sourceObs = new BehaviorSubject(0);
-  public secondObs = new BehaviorSubject(0);
+  public sourceObs$ = new BehaviorSubject(0);
+  public secondObs$ = new BehaviorSubject(0);
 
   constructor() {
-    this.sourceObs
+    this.sourceObs$
       .pipe(delay(1000))
       .subscribe(() => {
         this.sourceObsCounter += 1;
-        this.secondObs
+        this.secondObs$
           .pipe(delay(1000))
           .subscribe(() => {
             this.secondObsCounter += 1;
@@ -28,10 +28,10 @@ export class WaterfallComponent {
   }
 
   emitSource() {
-    this.sourceObs.next(0);
+    this.sourceObs$.next(0);
   }
 
   emitSecondObs() {
-    this.secondObs.next(0);
+    this.secondObs$.next(0);
   }
 }

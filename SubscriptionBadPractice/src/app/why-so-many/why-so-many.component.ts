@@ -10,24 +10,24 @@ export class WhySoManyComponent {
   public sourceObsCounter = 0;
   public secondObsCounter = 0;
 
-  public sourceObs = new BehaviorSubject(0);
-  public secondObs = new BehaviorSubject(0);
+  public sourceObs$ = new BehaviorSubject(0);
+  public secondObs$ = new BehaviorSubject(0);
 
   constructor() {
-    this.sourceObs
+    this.sourceObs$
       .subscribe(() => {
         this.sourceObsCounter += 1;
-        this.secondObs.subscribe(() => {
+        this.secondObs$.subscribe(() => {
           this.secondObsCounter += 1;
         });
       });
   }
 
   emitSource() {
-    this.sourceObs.next(0);
+    this.sourceObs$.next(0);
   }
 
   emitSecondObs() {
-    this.secondObs.next(0);
+    this.secondObs$.next(0);
   }
 }

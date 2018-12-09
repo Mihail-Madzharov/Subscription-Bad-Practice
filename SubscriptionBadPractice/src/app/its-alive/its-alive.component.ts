@@ -11,25 +11,25 @@ export class ItsAliveComponent {
   public sourceObsValue: string;
   public secondObsValue: string;
 
-  public sourceObs = new BehaviorSubject('');
-  public secondObs = new BehaviorSubject('');
+  public sourceObs$ = new BehaviorSubject('');
+  public secondObs$ = new BehaviorSubject('');
 
   constructor() {
-    this.sourceObs
+    this.sourceObs$
       .pipe(take(4))
       .subscribe((value) => {
         this.sourceObsValue = value;
-        this.secondObs.subscribe((innerValue) => {
+        this.secondObs$.subscribe((innerValue) => {
           this.secondObsValue = innerValue;
         });
       });
   }
 
   emitSource(value: string) {
-    this.sourceObs.next(value);
+    this.sourceObs$.next(value);
   }
 
   emitSecondObs(value: string) {
-    this.secondObs.next(value);
+    this.secondObs$.next(value);
   }
 }
