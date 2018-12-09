@@ -1,0 +1,16 @@
+<p>
+  <input #input1>
+</p>
+<p>
+  <input #input2>
+</p>
+<p>
+  <button (click)="emitSource(input1.value)">Source observable</button>
+  <button (click)="emitSecondObs(input2.value)">Second observable</button>
+</p>
+<p>
+  Source observable value:{{sourceObsValue}}
+</p>
+<p>
+  Second observable value:{{secondObsValue}}
+</p>
