@@ -12,6 +12,7 @@ export class WithLatestFromComponent {
   public secondObsValue: string;
 
   public sourceObs$ = new BehaviorSubject('');
+  // to show why it won't emit
   public secondObs$ = new Subject<string>();
 
   constructor() {

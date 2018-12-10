@@ -19,9 +19,10 @@ export class ItsAliveComponent {
       .pipe(take(4))
       .subscribe((value) => {
         this.sourceObsValue = value;
-        this.secondObs$.subscribe((innerValue) => {
-          this.secondObsValue = innerValue;
-        });
+        this.secondObs$
+          .subscribe((innerValue) => {
+            this.secondObsValue = innerValue;
+          });
       });
   }
 

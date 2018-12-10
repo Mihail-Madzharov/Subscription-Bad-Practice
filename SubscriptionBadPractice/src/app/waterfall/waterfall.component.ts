@@ -30,8 +30,4 @@ export class WaterfallComponent {
   emitSource() {
     this.sourceObs$.next(0);
   }
-
-  emitSecondObs() {
-    this.secondObs$.next(0);
-  }
 }
